@@ -1,0 +1,11 @@
+STATIC VALIDATION PASSED
+Project: /mnt/data/prehistoric_skies_game/PrehistoricSkies
+Scripts checked: 8
+Resource references: present
+Bracket/quote structure: balanced
+SHA256SUMS.txt: refreshed
+
+Runtime note:
+- This environment did not contain the Godot executable, Android SDK, or export templates.
+- The package therefore received static integrity validation, not an executed engine smoke test or signed APK export.
+- Open the project in Godot 4.7.1 and press Run for the final device-level smoke test.

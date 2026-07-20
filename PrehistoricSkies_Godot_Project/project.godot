@@ -1,0 +1,34 @@
+; Engine configuration file.
+; Prehistoric Skies - mobile open-world vertical slice
+config_version=5
+
+[application]
+config/name="Prehistoric Skies"
+run/main_scene="res://scenes/main.tscn"
+config/features=PackedStringArray("4.7", "Mobile")
+boot_splash/bg_color=Color(0.018, 0.028, 0.023, 1)
+boot_splash/image="res://icon.svg"
+config/icon="res://icon.svg"
+
+[display]
+window/size/viewport_width=1280
+window/size/viewport_height=720
+window/size/window_width_override=1280
+window/size/window_height_override=720
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=4
+
+[rendering]
+renderer/rendering_method="mobile"
+renderer/rendering_method.mobile="mobile"
+textures/default_filters/use_nearest_mipmap_filter=false
+anti_aliasing/quality/msaa_3d=2
+occlusion_culling/use_occlusion_culling=true
+lights_and_shadows/directional_shadow/size=2048
+limits/time/time_rollover_secs=3600.0
+environment/defaults/default_clear_color=Color(0.14, 0.23, 0.29, 1)
+
+[physics]
+3d/default_gravity=22.0
+common/enable_pause_aware_picking=true

@@ -1,0 +1,2 @@
+Project code generated for the user. You may use, modify, distribute, and commercialize it without attribution.
+Godot Engine itself is licensed separately under the MIT License.
