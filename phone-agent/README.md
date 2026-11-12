@@ -34,6 +34,19 @@ python call_me.py talk --goal "Quiz me on Spanish vocabulary for 5 minutes"
 ```
 Your phone rings. Pick up and talk. Say "bye" (or "hang up") and the agent ends the call.
 
+## Free option: ring your phone through Telegram
+
+A real phone-number call always costs something. `free_call.py` avoids the phone network: it places a Telegram voice call, so your phone rings in the Telegram app and a voice reads your message. It needs no account, key or paid plan, only Python.
+
+1. On your phone: install Telegram, set a username, then message `@CallMeBot_txtbot` and send `/start` to allow it to call you.
+2. Run:
+   ```bash
+   export TELEGRAM_USER=@yourusername
+   python free_call.py "Your build finished and all tests passed."
+   ```
+
+It is one-way (the voice speaks, it doesn't listen), and the message text passes through CallMeBot, a third-party service, so don't send anything private.
+
 ## Notes
 - Only Twilio-signed requests are accepted (`X-Twilio-Signature` is validated), so the public URL can't be abused.
 - `AGENT_EFFORT=low` is the default because every turn is time you spend waiting on the line.
