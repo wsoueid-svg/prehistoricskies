@@ -17,7 +17,9 @@ Usage:
   python free_call.py --repeat 2 --lang en-GB-Standard-B "Time to stand up."
 """
 import argparse
+import html
 import os
+import re
 import sys
 import urllib.error
 import urllib.parse
@@ -58,7 +60,12 @@ def main() -> int:
         sys.exit(f"CallMeBot answered HTTP {e.code}: {e.read().decode('utf-8', 'replace')[:300]}")
     except urllib.error.URLError as e:
         sys.exit(f"Could not reach CallMeBot: {e.reason}")
-    print(body.strip()[:500])
+    # The reply is an HTML page: drop scripts and tags, keep the status lines.
+    text = re.sub(r"(?is)<(script|style)\b.*?</\1>", " ", body)
+    text = re.sub(r"(?i)<br\s*/?>|</p>", "\n", text)
+    text = html.unescape(re.sub(r"<[^>]+>", " ", text))
+    lines = [" ".join(l.split()) for l in text.splitlines()]
+    print("\n".join(l for l in lines if l)[:1500])
     return 0
 
 
